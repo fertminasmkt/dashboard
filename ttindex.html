@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FertMinas — Dashboard Mídia Paga | Jan–Mai 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f8fa;--w:#fff;--ink:#111827;--ink2:#374151;--ink3:#6b7280;--ink4:#9ca3af;--brd:#e5e7eb;--brdL:#f0f1f3;--G:#059669;--G1:#d1fae5;--G0:#ecfdf5;--B:#2563eb;--B1:#dbeafe;--A:#d97706;--A1:#fef3c7;--R:#dc2626;--R1:#fee2e2;--V:#7c3aed;--V1:#ede9fe;--T:#0d9488;--RS:#e11d48;--CY:#0891b2;--OR:#ea580c;--SL:#475569;--rad:12px;--sh:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);--shM:0 4px 12px rgba(0,0,0,.06),0 1px 3px rgba(0,0,0,.04)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);font-family:'Plus Jakarta Sans',-apple-system,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.c{max-width:1100px;margin:0 auto;padding:0 28px 60px}
+header{padding:44px 0 32px;border-bottom:2px solid var(--ink);margin-bottom:36px}
+.ht{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:20px}
+.br{display:flex;align-items:center;gap:10px}
+.br i{width:32px;height:32px;background:var(--G);border-radius:8px;display:block}
+.br b{font-size:14px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+.hb{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);background:var(--w);border:1px solid var(--brd);border-radius:20px;padding:5px 14px}
+h1{font-size:34px;font-weight:800;line-height:1.1;letter-spacing:-.8px}
+.sb{font-size:15px;color:var(--ink3);margin-top:8px}
+.ks{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px;margin-bottom:40px}
+.k{background:var(--w);border:1px solid var(--brd);border-radius:var(--rad);padding:16px 14px;box-shadow:var(--sh);transition:.2s}
+.k:hover{box-shadow:var(--shM);transform:translateY(-1px)}
+.kl{font-size:9.5px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink4);margin-bottom:5px}
+.kv{font-size:22px;font-weight:800;line-height:1;letter-spacing:-.5px}
+.kv.g{color:var(--G)}.kv.b{color:var(--B)}
+.kx{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink4);margin-top:3px}
+.sec{margin-bottom:40px}
+.sh{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.st{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;color:var(--G);background:var(--G0);border:1px solid var(--G1);border-radius:6px;padding:3px 9px}
+.sn{font-size:17px;font-weight:700;letter-spacing:-.2px}
+.cd{background:var(--w);border:1px solid var(--brd);border-radius:var(--rad);padding:22px;box-shadow:var(--sh)}
+.cw{position:relative;width:100%}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:800px){.g2{grid-template-columns:1fr}.ks{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:500px){.ks{grid-template-columns:repeat(2,1fr)}h1{font-size:26px}}
+.tb{width:100%;border-collapse:collapse;font-size:13px}
+.tb thead th{font-size:10px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--ink4);text-align:left;padding:10px 8px;border-bottom:2px solid var(--brd)}
+.tb thead th.r{text-align:right}
+.tb td{padding:9px 8px;border-bottom:1px solid var(--brdL);color:var(--ink2)}
+.tb td.r{text-align:right;font-family:'JetBrains Mono',monospace;font-size:12px}
+.tb tr:last-child td{border-bottom:none}
+.tb tr:hover{background:var(--bg)}
+.p{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;padding:2px 9px;border-radius:20px}
+.pG{background:var(--G1);color:var(--G)}.pB{background:var(--B1);color:var(--B)}.pA{background:var(--A1);color:var(--A)}.pR{background:var(--R1);color:var(--R)}.pV{background:var(--V1);color:var(--V)}
+.eg{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:10px}
+.ec{background:var(--w);border:1px solid var(--brd);border-radius:8px;padding:13px;text-align:center;box-shadow:var(--sh)}
+.ev{font-size:19px;font-weight:800;letter-spacing:-.5px}
+.el{font-size:9.5px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--ink4);margin-top:3px}
+.lg{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:14px}
+.li{display:flex;align-items:center;gap:5px;font-size:12px;font-weight:500;color:var(--ink3)}
+.ld{width:10px;height:10px;border-radius:3px}
+.sl{font-size:11px;font-weight:500;color:var(--ink4);margin-bottom:10px}
+.fn{display:flex;flex-direction:column;gap:7px;padding:6px 0}
+.fr{display:flex;align-items:center;gap:10px}
+.fl{font-size:12px;font-weight:600;color:var(--ink2);width:55px;text-align:right;flex-shrink:0}
+.fw{flex:1;height:34px;background:var(--brdL);border-radius:8px;overflow:hidden}
+.fb{height:100%;border-radius:8px;display:flex;align-items:center;justify-content:flex-end;padding-right:10px;transition:width .8s ease}
+.fv{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:#fff}
+.fp{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:var(--ink3);width:50px;flex-shrink:0;margin-left:6px}
+footer{border-top:2px solid var(--ink);padding:24px 0;margin-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.ftl{font-size:12px;font-weight:600;letter-spacing:.5px}
+.ftr{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink4)}
+.divider{border:none;border-top:2px solid var(--ink);margin:48px 0 40px}
+.plat-label{font-size:22px;font-weight:800;letter-spacing:-.5px;margin-bottom:4px}
+.plat-sub{font-size:13px;color:var(--ink3);margin-bottom:28px}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.k,.sec,.ec{animation:rise .5s ease both}
+</style>
+</head>
+<body>
+<div class="c">
+
+<header>
+  <div class="ht">
+    <div class="br"><i></i><b>FertMinas</b></div>
+    <span class="hb">Meta Ads + Google Ads · Jan–Mai 2026</span>
+  </div>
+  <h1>Dashboard Mídia Paga</h1>
+  <p class="sb">Janeiro a Maio 2026 · Investimento consolidado R$ 5.426,53</p>
+</header>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- META ADS -->
+<!-- ══════════════════════════════════════════ -->
+<div class="plat-label">Meta Ads</div>
+<p class="plat-sub">116 registros · 80 campanhas · Instagram, Facebook, Threads, WhatsApp</p>
+
+<div class="ks">
+  <div class="k"><div class="kl">Investimento</div><div class="kv g">R$ 4.644</div><div class="kx">~R$ 929/mês</div></div>
+  <div class="k"><div class="kl">Alcance</div><div class="kv">670,5k</div><div class="kx">Pessoas únicas</div></div>
+  <div class="k"><div class="kl">Impressões</div><div class="kv">850,0k</div><div class="kx">Freq. média 1,22</div></div>
+  <div class="k"><div class="kl">Cliques</div><div class="kv">17.573</div><div class="kx">CTR 2,07%</div></div>
+  <div class="k"><div class="kl">CPC</div><div class="kv">R$ 0,26</div><div class="kx">Ponderado</div></div>
+  <div class="k"><div class="kl">CPM</div><div class="kv">R$ 5,46</div><div class="kx">Ponderado</div></div>
+  <div class="k"><div class="kl">Custo/engaj.</div><div class="kv">R$ 0,04</div><div class="kx">Por engaj. página</div></div>
+  <div class="k"><div class="kl">Visitas perfil IG</div><div class="kv">8.863</div><div class="kx">Via campanhas</div></div>
+</div>
+
+<!-- M01 -->
+<div class="sec"><div class="sh"><span class="st">01</span><span class="sn">Evolução mensal</span></div>
+<div class="g2">
+  <div class="cd"><div class="sl">Investimento, Alcance e Cliques</div><div class="cw" style="height:270px"><canvas id="mT"></canvas></div></div>
+  <div class="cd"><div class="sl">CPC, CTR e CPM</div><div class="cw" style="height:270px"><canvas id="mE"></canvas></div></div>
+</div></div>
+
+<!-- M02 -->
+<div class="sec"><div class="sh"><span class="st">02</span><span class="sn">Plataforma de entrega</span></div>
+<div class="g2">
+  <div class="cd"><div class="lg" id="pL"></div><div class="cw" style="height:230px"><canvas id="mP"></canvas></div></div>
+  <div class="cd" style="display:flex;flex-direction:column;justify-content:center">
+    <table class="tb"><thead><tr><th>Plataforma</th><th class="r">Invest.</th><th class="r">Alcance</th><th class="r">Cliques</th><th class="r">Reg.</th></tr></thead><tbody>
+      <tr><td><span class="p pG">Instagram</span></td><td class="r">R$ 4.145</td><td class="r">572.813</td><td class="r">15.148</td><td class="r">88</td></tr>
+      <tr><td><span class="p pB">Facebook</span></td><td class="r">R$ 495</td><td class="r">97.207</td><td class="r">2.421</td><td class="r">22</td></tr>
+      <tr><td><span class="p pV">Threads</span></td><td class="r">R$ 1</td><td class="r">33</td><td class="r">3</td><td class="r">5</td></tr>
+      <tr><td><span class="p pA">WhatsApp</span></td><td class="r">R$ 3</td><td class="r">406</td><td class="r">1</td><td class="r">1</td></tr>
+    </tbody></table>
+    <div class="sl" style="margin-top:10px;margin-bottom:0">25 campanhas entregaram em mais de uma plataforma (Advantage+/CBO).</div>
+  </div>
+</div></div>
+
+<!-- M03 -->
+<div class="sec"><div class="sh"><span class="st">03</span><span class="sn">Investimento por produto</span></div>
+<div class="cd"><div class="cw" style="height:480px"><canvas id="mPr"></canvas></div></div></div>
+
+<!-- M04 -->
+<div class="sec"><div class="sh"><span class="st">04</span><span class="sn">Destino de tráfego</span></div>
+<div class="g2">
+  <div class="cd"><div class="lg" id="dL"></div><div class="cw" style="height:230px"><canvas id="mD"></canvas></div></div>
+  <div class="cd" style="display:flex;flex-direction:column;justify-content:center">
+    <table class="tb"><thead><tr><th>Destino</th><th class="r">Invest.</th><th class="r">Cliques</th><th class="r">Reg.</th></tr></thead><tbody>
+      <tr><td><span class="p pG">Instagram</span></td><td class="r">R$ 1.822</td><td class="r">6.254</td><td class="r">38</td></tr>
+      <tr><td><span class="p pB">Site</span></td><td class="r">R$ 1.701</td><td class="r">7.779</td><td class="r">40</td></tr>
+      <tr><td><span class="p pA">Outros</span></td><td class="r">R$ 474</td><td class="r">1.818</td><td class="r">12</td></tr>
+      <tr><td><span class="p pR">YouTube</span></td><td class="r">R$ 447</td><td class="r">1.698</td><td class="r">22</td></tr>
+      <tr><td><span class="p pV">WhatsApp</span></td><td class="r">R$ 199</td><td class="r">24</td><td class="r">4</td></tr>
+    </tbody></table>
+  </div>
+</div></div>
+
+<!-- M05 -->
+<div class="sec"><div class="sh"><span class="st">05</span><span class="sn">Campanhas por mês e formato</span></div>
+<div class="g2">
+  <div class="cd"><div class="cw" style="height:250px"><canvas id="mMo"></canvas></div></div>
+  <div class="cd" style="display:flex;flex-direction:column;justify-content:center">
+    <table class="tb"><thead><tr><th>Mês</th><th class="r">Vídeo</th><th class="r">Estático</th><th class="r">Total</th></tr></thead><tbody>
+      <tr><td>Janeiro</td><td class="r">19</td><td class="r">0</td><td class="r"><b>19</b></td></tr>
+      <tr><td>Fevereiro</td><td class="r">24</td><td class="r">17</td><td class="r"><b>41</b></td></tr>
+      <tr><td>Março</td><td class="r">13</td><td class="r">4</td><td class="r"><b>17</b></td></tr>
+      <tr><td>Abril</td><td class="r">15</td><td class="r">7</td><td class="r"><b>22</b></td></tr>
+      <tr><td>Maio</td><td class="r">9</td><td class="r">8</td><td class="r"><b>17</b></td></tr>
+      <tr style="background:var(--G0)"><td style="font-weight:700">Total</td><td class="r" style="font-weight:700">80</td><td class="r" style="font-weight:700">36</td><td class="r" style="font-weight:700">116</td></tr>
+    </tbody></table>
+  </div>
+</div></div>
+
+<!-- M06 -->
+<div class="sec"><div class="sh"><span class="st">06</span><span class="sn">Top 10 campanhas (agrupado)</span></div>
+<div class="cd" style="overflow-x:auto"><table class="tb" id="tT"><thead><tr><th style="width:34%">Campanha</th><th class="r">Invest.</th><th class="r">Alcance</th><th class="r">Cliques</th><th class="r">CTR</th><th class="r">CPC</th></tr></thead><tbody></tbody></table></div></div>
+
+<!-- M07 -->
+<div class="sec"><div class="sh"><span class="st">07</span><span class="sn">Engajamento acumulado</span></div>
+<div class="eg">
+  <div class="ec"><div class="ev">106.147</div><div class="el">Engaj. página</div></div>
+  <div class="ec"><div class="ev">106.141</div><div class="el">Engaj. post</div></div>
+  <div class="ec"><div class="ev">2.609</div><div class="el">Reações</div></div>
+  <div class="ec"><div class="ev">+978</div><div class="el">Seguidores IG</div></div>
+  <div class="ec"><div class="ev">167</div><div class="el">Compartilh.</div></div>
+  <div class="ec"><div class="ev">93</div><div class="el">Salvamentos</div></div>
+  <div class="ec"><div class="ev">36</div><div class="el">Conversas msg</div></div>
+  <div class="ec"><div class="ev">20</div><div class="el">Novos contatos</div></div>
+  <div class="ec"><div class="ev">14</div><div class="el">Comentários</div></div>
+  <div class="ec"><div class="ev">6</div><div class="el">Curtidas FB</div></div>
+</div>
+<div class="cd" style="margin-top:14px"><div class="sl">Engajamento e seguidores por mês</div><div class="cw" style="height:230px"><canvas id="mEn"></canvas></div></div></div>
+
+<!-- M08 -->
+<div class="sec"><div class="sh"><span class="st">08</span><span class="sn">Retenção de vídeo (Meta)</span></div>
+<div class="g2">
+  <div class="cd"><div class="sl">Funil — % do total de reproduções (363.257)</div><div class="fn" id="mF"></div></div>
+  <div class="cd" style="display:flex;flex-direction:column;justify-content:center">
+    <table class="tb"><thead><tr><th>Etapa</th><th class="r">Reprod.</th><th class="r">% total</th><th class="r">Retenção</th></tr></thead><tbody>
+      <tr><td>Total</td><td class="r">363.257</td><td class="r">100%</td><td class="r">—</td></tr>
+      <tr><td>25%</td><td class="r">21.616</td><td class="r">6,0%</td><td class="r">—</td></tr>
+      <tr><td>50%</td><td class="r">9.376</td><td class="r">2,6%</td><td class="r"><span class="p pA">43,4% dos 25%</span></td></tr>
+      <tr><td>75%</td><td class="r">5.750</td><td class="r">1,6%</td><td class="r"><span class="p pA">61,3% dos 50%</span></td></tr>
+      <tr><td>100%</td><td class="r">3.371</td><td class="r">0,9%</td><td class="r"><span class="p pG">58,6% dos 75%</span></td></tr>
+    </tbody></table>
+    <div style="display:flex;gap:10px;margin-top:12px">
+      <div class="ec" style="flex:1"><div class="ev" style="font-size:16px">17.817</div><div class="el">ThruPlays</div></div>
+      <div class="ec" style="flex:1"><div class="ev" style="font-size:16px">363.257</div><div class="el">Reproduções</div></div>
+    </div>
+  </div>
+</div></div>
+
+<!-- M09 -->
+<div class="sec"><div class="sh"><span class="st">09</span><span class="sn">Eficiência por produto</span></div>
+<div class="g2">
+  <div class="cd"><div class="sl">CPC (R$) — menor = melhor</div><div class="cw" style="height:380px"><canvas id="mC1"></canvas></div></div>
+  <div class="cd"><div class="sl">CTR (%) — maior = melhor</div><div class="cw" style="height:380px"><canvas id="mC2"></canvas></div></div>
+</div></div>
+
+<!-- M10 -->
+<div class="sec"><div class="sh"><span class="st">10</span><span class="sn">Resumo mensal Meta</span></div>
+<div class="cd" style="overflow-x:auto"><table class="tb">
+  <thead><tr><th>Mês</th><th class="r">Invest.</th><th class="r">Alcance</th><th class="r">Impr.</th><th class="r">Cliques</th><th class="r">CPC</th><th class="r">CTR</th><th class="r">CPM</th><th class="r">Engaj.</th><th class="r">Seg.IG</th><th class="r">Vis.IG</th></tr></thead>
+  <tbody>
+    <tr><td><b>Jan</b></td><td class="r">R$ 783</td><td class="r">78.553</td><td class="r">104.912</td><td class="r">1.999</td><td class="r"><span class="p pR">R$ 0,39</span></td><td class="r">1,91%</td><td class="r">R$ 7,46</td><td class="r">19.997</td><td class="r">+279</td><td class="r">1.941</td></tr>
+    <tr><td><b>Fev</b></td><td class="r">R$ 1.845</td><td class="r">331.294</td><td class="r">421.920</td><td class="r">7.677</td><td class="r"><span class="p pG">R$ 0,24</span></td><td class="r">1,82%</td><td class="r">R$ 4,37</td><td class="r">37.720</td><td class="r">+322</td><td class="r">2.936</td></tr>
+    <tr><td><b>Mar</b></td><td class="r">R$ 586</td><td class="r">71.879</td><td class="r">88.717</td><td class="r">2.978</td><td class="r"><span class="p pG">R$ 0,20</span></td><td class="r"><span class="p pG">3,36%</span></td><td class="r">R$ 6,60</td><td class="r">15.452</td><td class="r">+78</td><td class="r">846</td></tr>
+    <tr><td><b>Abr</b></td><td class="r">R$ 915</td><td class="r">126.652</td><td class="r">156.383</td><td class="r">3.262</td><td class="r"><span class="p pB">R$ 0,28</span></td><td class="r">2,09%</td><td class="r">R$ 5,85</td><td class="r">22.012</td><td class="r">+218</td><td class="r">2.350</td></tr>
+    <tr><td><b>Mai</b></td><td class="r">R$ 515</td><td class="r">62.081</td><td class="r">78.030</td><td class="r">1.657</td><td class="r"><span class="p pB">R$ 0,31</span></td><td class="r">2,12%</td><td class="r">R$ 6,60</td><td class="r">10.960</td><td class="r">+81</td><td class="r">790</td></tr>
+    <tr style="background:var(--G0);font-weight:700"><td>Total</td><td class="r">R$ 4.644</td><td class="r">670.459</td><td class="r">849.962</td><td class="r">17.573</td><td class="r">R$ 0,26</td><td class="r">2,07%</td><td class="r">R$ 5,46</td><td class="r">106.141</td><td class="r">+978</td><td class="r">8.863</td></tr>
+  </tbody>
+</table></div></div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- GOOGLE ADS -->
+<!-- ══════════════════════════════════════════ -->
+<hr class="divider">
+<div class="plat-label">Google Ads</div>
+<p class="plat-sub">9 campanhas ativas · 100% Vídeo (YouTube/Display) · Jan–Mar 2026</p>
+
+<div class="ks">
+  <div class="k"><div class="kl">Investimento</div><div class="kv b">R$ 783</div><div class="kx">3 meses ativos</div></div>
+  <div class="k"><div class="kl">Impressões</div><div class="kv">230,3k</div><div class="kx">YouTube + Display</div></div>
+  <div class="k"><div class="kl">Cliques</div><div class="kv">318</div><div class="kx">CTR 0,14%</div></div>
+  <div class="k"><div class="kl">CPC</div><div class="kv">R$ 2,46</div><div class="kx">Ponderado</div></div>
+  <div class="k"><div class="kl">CPM</div><div class="kv">R$ 3,40</div><div class="kx">Ponderado</div></div>
+  <div class="k"><div class="kl">Views TrueView</div><div class="kv">47.879</div><div class="kx">Vídeos assistidos</div></div>
+  <div class="k"><div class="kl">Conversões</div><div class="kv">1</div><div class="kx">Contato via site</div></div>
+  <div class="k"><div class="kl">CPV médio</div><div class="kv">R$ 0,02</div><div class="kx">Custo por view</div></div>
+</div>
+
+<!-- G01 -->
+<div class="sec"><div class="sh"><span class="st">G1</span><span class="sn">Campanhas Google Ads</span></div>
+<div class="cd" style="overflow-x:auto"><table class="tb" id="gT"><thead><tr><th style="width:30%">Campanha</th><th class="r">Invest.</th><th class="r">Impr.</th><th class="r">Cliques</th><th class="r">Views</th><th class="r">CTR</th><th class="r">CPC</th></tr></thead><tbody></tbody></table></div></div>
+
+<!-- G02 -->
+<div class="sec"><div class="sh"><span class="st">G2</span><span class="sn">Retenção de vídeo (Google)</span></div>
+<div class="g2">
+  <div class="cd"><div class="sl">% de espectadores que assistiram cada etapa</div><div class="fn" id="gF"></div></div>
+  <div class="cd" style="display:flex;flex-direction:column;justify-content:center">
+    <table class="tb"><thead><tr><th>Campanha</th><th class="r">50%</th><th class="r">75%</th><th class="r">100%</th></tr></thead><tbody>
+      <tr><td style="font-size:11px">Liderança futuro agro</td><td class="r">46,1%</td><td class="r">41,5%</td><td class="r">37,9%</td></tr>
+      <tr><td style="font-size:11px">Juntos cultivamos</td><td class="r">52,2%</td><td class="r">48,6%</td><td class="r">46,4%</td></tr>
+      <tr><td style="font-size:11px">Eco Coat Complete</td><td class="r">41,0%</td><td class="r">36,3%</td><td class="r">33,0%</td></tr>
+      <tr><td style="font-size:11px">Humic W-Coat</td><td class="r">30,3%</td><td class="r">26,1%</td><td class="r">23,6%</td></tr>
+      <tr><td style="font-size:11px">Precisão na Indústria</td><td class="r">18,3%</td><td class="r">14,6%</td><td class="r">12,4%</td></tr>
+      <tr><td style="font-size:11px">FMS Soluções</td><td class="r">7,2%</td><td class="r">2,7%</td><td class="r">2,3%</td></tr>
+      <tr><td style="font-size:11px">9 anos</td><td class="r">4,7%</td><td class="r">3,1%</td><td class="r">2,5%</td></tr>
+    </tbody></table>
+  </div>
+</div></div>
+
+<!-- G03 -->
+<div class="sec"><div class="sh"><span class="st">G3</span><span class="sn">Investimento mensal Google</span></div>
+<div class="cd"><div class="cw" style="height:220px"><canvas id="gM"></canvas></div></div></div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- CONSOLIDADO -->
+<!-- ══════════════════════════════════════════ -->
+<hr class="divider">
+<div class="plat-label">Consolidado</div>
+<p class="plat-sub">Meta Ads + Google Ads · Visão unificada do investimento</p>
+
+<div class="g2">
+  <div class="cd"><div class="sl">Investimento total por canal</div><div class="cw" style="height:220px"><canvas id="cC"></canvas></div></div>
+  <div class="cd" style="display:flex;flex-direction:column;justify-content:center">
+    <table class="tb"><thead><tr><th>Canal</th><th class="r">Invest.</th><th class="r">Impr.</th><th class="r">Cliques</th><th class="r">CPC</th></tr></thead><tbody>
+      <tr><td><span class="p pG">Meta Ads</span></td><td class="r">R$ 4.644</td><td class="r">849.962</td><td class="r">17.573</td><td class="r">R$ 0,26</td></tr>
+      <tr><td><span class="p pB">Google Ads</span></td><td class="r">R$ 783</td><td class="r">230.271</td><td class="r">318</td><td class="r">R$ 2,46</td></tr>
+      <tr style="background:var(--G0);font-weight:700"><td>Total</td><td class="r">R$ 5.427</td><td class="r">1.080.233</td><td class="r">17.891</td><td class="r">R$ 0,30</td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+<footer>
+  <span class="ftl">FertMinas · Gerência de Marketing</span>
+  <span class="ftr">Relatório gerado em 27/05/2026</span>
+</footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+const G='#059669',B='#2563eb',A='#d97706',R='#dc2626',V='#7c3aed',T='#0d9488',RS='#e11d48',CY='#0891b2',OR='#ea580c',SL='#475569';
+const tc='#9ca3af',gc='#f0f1f3';
+const tt={backgroundColor:'#111827',titleColor:'#f9fafb',bodyColor:'#f9fafb',borderColor:'#374151',borderWidth:1,padding:10,cornerRadius:8,titleFont:{family:'Plus Jakarta Sans',weight:'600',size:12},bodyFont:{family:'JetBrains Mono',size:11}};
+const mn={family:'JetBrains Mono',size:10},sn={family:'Plus Jakarta Sans',size:11};
+const ms=['Jan','Fev','Mar','Abr','Mai'];
+const bopt=(id,lbs,ds,o)=>new Chart(document.getElementById(id),{...o,data:{labels:lbs,datasets:ds}});
+
+// M01
+bopt('mT',ms,[
+  {label:'Investimento (R$)',data:[783,1845,586,915,515],backgroundColor:G+'cc',borderRadius:4,borderSkipped:false,yAxisID:'y',order:2},
+  {label:'Alcance (k)',data:[78.6,331.3,71.9,126.7,62.1],type:'line',borderColor:B,pointBackgroundColor:B,pointRadius:4,borderWidth:2,tension:.3,yAxisID:'y1',order:1},
+  {label:'Cliques (k)',data:[2.0,7.7,3.0,3.3,1.7],type:'line',borderColor:OR,pointBackgroundColor:OR,pointRadius:4,borderWidth:2,tension:.3,yAxisID:'y1',order:1}
+],{type:'bar',options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'bottom',labels:{color:'#374151',font:{...sn,weight:'500',size:10},usePointStyle:true,padding:10}},tooltip:tt},scales:{y:{position:'left',grid:{color:gc},ticks:{color:tc,font:mn,callback:v=>'R$'+v},border:{display:false}},y1:{position:'right',grid:{display:false},ticks:{color:tc,font:mn,callback:v=>v+'k'},border:{display:false}},x:{grid:{display:false},ticks:{color:tc,font:mn},border:{display:false}}}}});
+
+bopt('mE',ms,[
+  {label:'CPC (R$)',data:[.39,.24,.20,.28,.31],borderColor:R,pointBackgroundColor:R,pointRadius:5,borderWidth:2.5,tension:.3,yAxisID:'y'},
+  {label:'CTR (%)',data:[1.91,1.82,3.36,2.09,2.12],borderColor:G,pointBackgroundColor:G,pointRadius:5,borderWidth:2.5,tension:.3,yAxisID:'y1'},
+  {label:'CPM (R$)',data:[7.46,4.37,6.60,5.85,6.60],borderColor:A,pointBackgroundColor:A,pointRadius:5,borderWidth:2.5,tension:.3,yAxisID:'y',borderDash:[5,3]}
+],{type:'line',options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'bottom',labels:{color:'#374151',font:{...sn,weight:'500',size:10},usePointStyle:true,padding:10}},tooltip:tt},scales:{y:{position:'left',grid:{color:gc},ticks:{color:tc,font:mn,callback:v=>'R$'+v.toFixed(2)},border:{display:false},min:0},y1:{position:'right',grid:{display:false},ticks:{color:tc,font:mn,callback:v=>v+'%'},border:{display:false},min:0},x:{grid:{display:false},ticks:{color:tc,font:mn},border:{display:false}}}}});
+
+// M02
+const pLa=['Instagram','Facebook','Threads','WhatsApp'],pVa=[4145.42,494.77,.63,2.88],pCa=[G,B,V,A],pt=pVa.reduce((a,b)=>a+b,0);
+document.getElementById('pL').innerHTML=pLa.map((l,i)=>`<span class="li"><span class="ld" style="background:${pCa[i]}"></span>${l} ${(pVa[i]/pt*100).toFixed(1)}%</span>`).join('');
+bopt('mP',pLa,[{data:pVa,backgroundColor:pCa,borderWidth:3,borderColor:'#fff',borderRadius:4}],{type:'doughnut',options:{responsive:true,maintainAspectRatio:false,cutout:'64%',plugins:{legend:{display:false},tooltip:{...tt,callbacks:{label:c=>'R$ '+c.raw.toLocaleString('pt-BR',{minimumFractionDigits:2})+' ('+(c.raw/pt*100).toFixed(1)+'%)'}}}}});
+
+// M03
+const prL=['MicroPlus M+','Phos-Coat','Outros','Eco-Coat','Nitrogen-Duo','Lives','Safras','Op. Portuária','Podcast','Micronutrientes','Tecn. Aplicada','Vagas','Tráf. Direto','CEO','Laboratório','Agronegócio','Institucional','Gramix','GPTW','Dia Trabalho','Humic W-Coat','ByoN-Coat'];
+const prV=[1066.75,634.78,369.60,286.94,280.92,259.95,259.23,199.20,190.46,171.61,139.86,129.88,119.06,100,99.73,64.07,50,49.95,49.80,46.63,45.44,29.84];
+const prC=[G,T,SL,B,V,RS,A,OR,CY,'#65a30d',R,'#4f46e5','#0e7490','#be185d',G,V,'#b45309',SL,CY,R,T,OR];
+bopt('mPr',prL,[{data:prV,backgroundColor:prC,borderRadius:5,borderSkipped:false,barThickness:16}],{type:'bar',options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...tt,callbacks:{label:c=>'R$ '+c.raw.toLocaleString('pt-BR',{minimumFractionDigits:2})}}},scales:{x:{grid:{color:gc},ticks:{color:tc,font:mn,callback:v=>'R$'+v},border:{display:false}},y:{grid:{display:false},ticks:{color:'#374151',font:{...sn,weight:'500'}},border:{display:false}}}}});
+
+// M04
+const dLa=['Instagram','Site','Outros','YouTube','WhatsApp'],dVa=[1822.10,1700.97,473.90,447.41,199.32],dCa=[G,B,A,R,V],dt=dVa.reduce((a,b)=>a+b,0);
+document.getElementById('dL').innerHTML=dLa.map((l,i)=>`<span class="li"><span class="ld" style="background:${dCa[i]}"></span>${l} ${Math.round(dVa[i]/dt*100)}%</span>`).join('');
+bopt('mD',dLa,[{data:dVa,backgroundColor:dCa,borderWidth:3,borderColor:'#fff',borderRadius:4}],{type:'doughnut',options:{responsive:true,maintainAspectRatio:false,cutout:'64%',plugins:{legend:{display:false},tooltip:{...tt,callbacks:{label:c=>'R$ '+c.raw.toLocaleString('pt-BR',{minimumFractionDigits:2})+' ('+Math.round(c.raw/dt*100)+'%)'}}}}});
+
+// M05
+bopt('mMo',ms,[{label:'Vídeo',data:[19,24,13,15,9],backgroundColor:B,borderRadius:4,borderSkipped:false},{label:'Estático',data:[0,17,4,7,8],backgroundColor:A,borderRadius:4,borderSkipped:false}],{type:'bar',options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',align:'end',labels:{color:'#374151',font:{...sn,weight:'500'},usePointStyle:true,pointStyle:'rectRounded',padding:14}},tooltip:tt},scales:{x:{grid:{display:false},ticks:{color:tc,font:mn},border:{display:false}},y:{grid:{color:gc},ticks:{color:tc,font:mn,stepSize:5},border:{display:false}}}}});
+
+// M06
+[{n:'Tráfego Direto Site',v:119.06,a:35190,c:695,ctr:1.12,cpc:.17},{n:'CEO / Insta',v:100,a:17958,c:339,ctr:1.23,cpc:.29},{n:'MicroPlus Abril / Insta',v:100,a:4697,c:190,ctr:3.33,cpc:.53},{n:'Live Fósforo / YouTube',v:100,a:24901,c:320,ctr:1.19,cpc:.31},{n:'Eco-Coat Protec / Insta',v:99.99,a:8077,c:254,ctr:2.53,cpc:.39},{n:'MicroPlus BigBag / Insta',v:99.99,a:5117,c:161,ctr:2.22,cpc:.62},{n:'MicroPlus Estático / Maio',v:99.99,a:10909,c:299,ctr:1.94,cpc:.33},{n:'Vaga São Luís / Site',v:99.98,a:17225,c:775,ctr:2.97,cpc:.13},{n:'MicroPlus / WhatsApp',v:99.96,a:3941,c:8,ctr:.13,cpc:12.49},{n:'Carrossel MicroPlus / Site',v:99.96,a:15536,c:407,ctr:1.76,cpc:.25}].forEach(r=>{const pc=r.cpc>1?'pR':r.cpc<.25?'pG':'pB';document.querySelector('#tT tbody').innerHTML+=`<tr><td style="font-weight:500">${r.n}</td><td class="r">R$ ${r.v.toFixed(2)}</td><td class="r">${r.a.toLocaleString('pt-BR')}</td><td class="r">${r.c.toLocaleString('pt-BR')}</td><td class="r">${r.ctr.toFixed(2)}%</td><td class="r"><span class="p ${pc}">R$ ${r.cpc.toFixed(2)}</span></td></tr>`});
+
+// M07
+bopt('mEn',ms,[
+  {label:'Engajamento (k)',data:[20.0,37.7,15.5,22.0,11.0],backgroundColor:G+'cc',borderRadius:4,borderSkipped:false,yAxisID:'y',order:2},
+  {label:'Seguidores IG',data:[279,322,78,218,81],type:'line',borderColor:V,pointBackgroundColor:V,pointRadius:5,borderWidth:2.5,tension:.3,yAxisID:'y1',order:1}
+],{type:'bar',options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'bottom',labels:{color:'#374151',font:{...sn,weight:'500',size:10},usePointStyle:true,padding:10}},tooltip:tt},scales:{y:{position:'left',grid:{color:gc},ticks:{color:tc,font:mn,callback:v=>v+'k'},border:{display:false}},y1:{position:'right',grid:{display:false},ticks:{color:tc,font:mn},border:{display:false}},x:{grid:{display:false},ticks:{color:tc,font:mn},border:{display:false}}}}});
+
+// M08 Funnel
+[{l:'Total',v:363257,p:'100%',c:G},{l:'25%',v:21616,p:'6,0%',c:B},{l:'50%',v:9376,p:'2,6%',c:A},{l:'75%',v:5750,p:'1,6%',c:V},{l:'100%',v:3371,p:'0,9%',c:RS}].forEach(d=>{const w=Math.max(8,d.v/363257*100);document.getElementById('mF').innerHTML+=`<div class="fr"><span class="fl">${d.l}</span><div class="fw"><div class="fb" style="width:${w}%;background:${d.c}"><span class="fv">${w>12?d.v.toLocaleString('pt-BR'):''}</span></div></div><span class="fp">${d.p}</span></div>`});
+
+// M09
+const eL=['Vagas','Tráf. Direto','Podcast','Tecn. Aplicada','Eco-Coat','Humic W-Coat','Micronutr.','Phos-Coat','MicroPlus M+','GPTW','Nitrogen-Duo','Lives','Outros','CEO','Safras','Gramix','ByoN-Coat','Dia Trabalho','Laboratório','Institucional','Agronegócio','Op. Portuária'];
+const eC=[.11,.17,.21,.21,.22,.24,.25,.26,.27,.27,.28,.28,.28,.29,.36,.37,.39,.40,.41,.55,.56,.64];
+const eK=[R,'#0e7490',CY,R,B,T,'#65a30d',T,G,CY,V,RS,SL,'#be185d',A,SL,OR,R,G,'#4f46e5',V,OR];
+bopt('mC1',eL,[{data:eC,backgroundColor:eK.map(c=>c+'cc'),borderColor:eK,borderWidth:1,borderRadius:4,borderSkipped:false,barThickness:13}],{type:'bar',options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...tt,callbacks:{label:c=>'R$ '+c.raw.toFixed(2)}}},scales:{x:{grid:{color:gc},ticks:{color:tc,font:mn,callback:v=>'R$'+v.toFixed(2)},border:{display:false},min:0,max:.7},y:{grid:{display:false},ticks:{color:'#374151',font:{...sn,weight:'500',size:10}},border:{display:false}}}}});
+
+const cL=['Podcast','Vagas','Tecn. Aplicada','Micronutr.','GPTW','Outros','Eco-Coat','Humic W-Coat','Safras','MicroPlus M+','Institucional','Dia Trabalho','Laboratório','Op. Portuária','Phos-Coat','ByoN-Coat','Nitrogen-Duo','Agronegócio','CEO','Tráf. Direto','Lives','Gramix'];
+const cV=[4.51,3.48,3.47,2.88,2.81,2.57,2.52,2.48,2.44,2.27,2.19,2.04,2.02,1.99,1.89,1.88,1.69,1.42,1.23,1.12,1.02,.99];
+const cK=[CY,R,R,'#65a30d',CY,SL,B,T,A,G,'#4f46e5',R,G,OR,T,OR,V,V,'#be185d','#0e7490',RS,SL];
+bopt('mC2',cL,[{data:cV,backgroundColor:cK.map(c=>c+'cc'),borderColor:cK,borderWidth:1,borderRadius:4,borderSkipped:false,barThickness:13}],{type:'bar',options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...tt,callbacks:{label:c=>c.raw.toFixed(2)+'%'}}},scales:{x:{grid:{color:gc},ticks:{color:tc,font:mn,callback:v=>v+'%'},border:{display:false},min:0,max:5.5},y:{grid:{display:false},ticks:{color:'#374151',font:{...sn,weight:'500',size:10}},border:{display:false}}}}});
+
+// GOOGLE ADS
+// G01
+[{n:'FMS Soluções Inteligentes',v:150.36,i:60984,c:66,vw:1763,ctr:.11,cpc:2.28},{n:'Liderança futuro do agro',v:100.19,i:23273,c:28,vw:8732,ctr:.12,cpc:3.58},{n:'Eco Coat Complete',v:100.07,i:21508,c:67,vw:8556,ctr:.31,cpc:1.49},{n:'Precisão na Indústria',v:100.18,i:12123,c:46,vw:4036,ctr:.38,cpc:2.18},{n:'Juntos cultivamos',v:100.17,i:27769,c:63,vw:13174,ctr:.23,cpc:1.59},{n:'Humic W-Coat nitrogenados',v:100.14,i:20222,c:39,vw:5162,ctr:.19,cpc:2.57},{n:'FertMinas 9 anos',v:100.13,i:62879,c:4,vw:6048,ctr:.01,cpc:25.03},{n:'Tecn. aplicada à indústria',v:26.97,i:1222,c:5,vw:359,ctr:.41,cpc:5.39},{n:'Eco Coat VIEWS',v:4.62,i:291,c:0,vw:49,ctr:0,cpc:0}].forEach(r=>{const pc=r.cpc>3?'pR':r.cpc<2?'pG':'pB';document.querySelector('#gT tbody').innerHTML+=`<tr><td style="font-weight:500;font-size:12px">${r.n}</td><td class="r">R$ ${r.v.toFixed(2)}</td><td class="r">${r.i.toLocaleString('pt-BR')}</td><td class="r">${r.c}</td><td class="r">${r.vw.toLocaleString('pt-BR')}</td><td class="r">${r.ctr.toFixed(2)}%</td><td class="r"><span class="p ${pc}">${r.cpc?'R$ '+r.cpc.toFixed(2):'—'}</span></td></tr>`});
+
+// G02 Funnel (average retention across campaigns with views)
+[{l:'50%',p:'29,4%',c:B},{l:'75%',p:'24,4%',c:A},{l:'100%',p:'21,4%',c:V}].forEach(d=>{const w=parseFloat(d.p.replace(',','.'))/52*100;document.getElementById('gF').innerHTML+=`<div class="fr"><span class="fl">${d.l}</span><div class="fw"><div class="fb" style="width:${w}%;background:${d.c}"><span class="fv">${d.p}</span></div></div></div>`});
+
+// G03
+bopt('gM',['Jan','Fev','Mar'],[
+  {label:'Investimento (R$)',data:[104.81,327.34,350.68],backgroundColor:[G,B,A],borderRadius:5,borderSkipped:false},
+  {label:'Views TrueView',data:[8781,28137,10961],type:'line',borderColor:V,pointBackgroundColor:V,pointRadius:5,borderWidth:2.5,tension:.3,yAxisID:'y1'}
+],{type:'bar',options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'bottom',labels:{color:'#374151',font:{...sn,weight:'500',size:10},usePointStyle:true,padding:12}},tooltip:tt},scales:{y:{position:'left',grid:{color:gc},ticks:{color:tc,font:mn,callback:v=>'R$'+v},border:{display:false}},y1:{position:'right',grid:{display:false},ticks:{color:tc,font:mn,callback:v=>(v/1000).toFixed(0)+'k'},border:{display:false}},x:{grid:{display:false},ticks:{color:tc,font:mn},border:{display:false}}}}});
+
+// CONSOLIDADO
+bopt('cC',['Meta Ads','Google Ads'],[{data:[4643.70,782.83],backgroundColor:[G,B],borderRadius:6,borderSkipped:false,barThickness:40}],{type:'bar',options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{...tt,callbacks:{label:c=>'R$ '+c.raw.toLocaleString('pt-BR',{minimumFractionDigits:2})}}},scales:{y:{grid:{color:gc},ticks:{color:tc,font:mn,callback:v=>'R$'+v},border:{display:false}},x:{grid:{display:false},ticks:{color:'#374151',font:{...sn,weight:'600'}},border:{display:false}}}}});
+</script>
+</body>
+</html>
